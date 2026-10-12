@@ -1,6 +1,6 @@
-﻿# -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 """
-NJMU 校园网自动认证 - Android APK 轻量极速编译与打包脚本
+我爱校园网 - Android APK 轻量极速编译与打包脚本
 直接基于本地 Android SDK（javac + d8 + aapt2 + zipalign + apksigner）构建，
 无需笨重的 Gradle，数秒内即可完成极简 33KB 原生 APK 的编译与签名。
 """
@@ -44,7 +44,7 @@ def run_cmd(args, desc=""):
     print(f"✔ {desc} 完成")
 
 def main():
-    print("=== 开始构建 NJMU 校园网自动认证 Android APK ===")
+    print("=== 开始构建 我爱校园网 Android APK ===")
     sdk = find_android_sdk()
     bt = sdk / "build-tools" / "37.0.0"
     if not bt.exists():
@@ -91,8 +91,8 @@ def main():
         z.write(dex_dir / "classes.dex", "classes.dex")
 
     # 5. 对齐 APK (zipalign 4 字节对齐)
-    out_apk = RELEASE_DIR / "NJMU-AutoAuth.apk"
-    idsig_file = RELEASE_DIR / "NJMU-AutoAuth.apk.idsig"
+    out_apk = RELEASE_DIR / "WoAiCampus.apk"
+    idsig_file = RELEASE_DIR / "WoAiCampus.apk.idsig"
     try:
         if out_apk.exists(): out_apk.unlink()
         if idsig_file.exists(): idsig_file.unlink()
@@ -102,7 +102,7 @@ def main():
     run_cmd([bt / "zipalign.exe", "-f", "4", base_apk, aligned_apk], desc="APK 对齐 (zipalign)")
 
     # 6. 使用本地专用 JKS 签名 APK
-    out_apk = RELEASE_DIR / "NJMU-AutoAuth.apk"
+    out_apk = RELEASE_DIR / "WoAiCampus.apk"
     run_cmd([bt / "apksigner.bat", "sign", "--ks", key, "--ks-pass", f"file:{pwfile}", "--out", out_apk, aligned_apk], desc="APK 签名 (apksigner)")
     run_cmd([bt / "apksigner.bat", "verify", out_apk], desc="验证 APK 签名")
     # Preserve all previous versioned APKs. Release name comes from the manifest.
@@ -112,10 +112,10 @@ def main():
     version_name = match.group(1)
     if version_name in {"1.4", "1.5", "1.5.1", "1.6", "1.6.1"}:
         raise RuntimeError("Refusing to overwrite an earlier release archive")
-    versioned_apk = RELEASE_DIR / f"NJMU-AutoAuth-v{version_name}-OneUI.apk"
+    versioned_apk = RELEASE_DIR / f"WoAiCampus-v{version_name}-OneUI.apk"
     if versioned_apk.exists(): raise RuntimeError("Versioned release exists: bump the version first")
     shutil.copy2(out_apk, versioned_apk)
-    generated_idsig = RELEASE_DIR / "NJMU-AutoAuth.apk.idsig"
+    generated_idsig = RELEASE_DIR / "WoAiCampus.apk.idsig"
     if generated_idsig.exists():
         shutil.copy2(generated_idsig, RELEASE_DIR / f"{versioned_apk.name}.idsig")
     run_cmd([bt / "apksigner.bat", "verify", versioned_apk], desc=f"验证 v{version_name} 发布版签名")

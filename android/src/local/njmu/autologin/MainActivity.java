@@ -172,7 +172,7 @@ public class MainActivity extends Activity {
         titleBox.setLayoutParams(new LinearLayout.LayoutParams(0, -2, 1.0f));
 
         TextView titleText = new TextView(this);
-        titleText.setText("校园网");
+        titleText.setText("我爱校园网");
         titleText.setTextSize(30);
         titleText.setTypeface(Typeface.DEFAULT_BOLD);
         titleText.setTextColor(cTextPrimary);
@@ -186,7 +186,7 @@ public class MainActivity extends Activity {
         header.addView(titleBox);
 
         TextView badge = new TextView(this);
-        badge.setText("v1.8.5");
+        badge.setText("v1.8.6");
         badge.setTextSize(11);
         badge.setTypeface(Typeface.DEFAULT_BOLD);
         badge.setTextColor(cActionBlue);

@@ -13,8 +13,8 @@ def check(cond,msg):
     global count
     if not cond:raise AssertionError(msg)
     count+=1
-assert m.attrib[android+"versionName"]=="1.8.5"
-check(m.attrib[android+"versionCode"]=="17","versionCode")
+assert m.attrib[android+"versionName"]=="1.8.6"
+check(m.attrib[android+"versionCode"]=="18","versionCode")
 perms={x.attrib[android+"name"] for x in m.findall("uses-permission")}
 for perm in ["android.permission.RECEIVE_BOOT_COMPLETED","android.permission.INTERNET","android.permission.FOREGROUND_SERVICE"]:
     check(perm in perms,"missing permission "+perm)
@@ -43,4 +43,4 @@ for x in ["CHECK_BUSY.compareAndSet(false, true)","requiredQuiet != AuthSchedule
 ui=sources["MainActivity.java"]
 for x in ['"隐藏后台"','"运行设置"','"电池不受限制  ›"','"账号与自动认证"','isIgnoringBatteryOptimizations','AuthScheduler.changeMode(this, checked)','AuthScheduler.pause(this)','AuthScheduler.isScheduled(this)','openBatterySettings()']:
     check(x in ui,"ui: "+x)
-print(f"PASS: {count} v1.8.5 source/manifest contract checks (static only)")
+print(f"PASS: {count} v1.8.6 source/manifest contract checks (static only)")

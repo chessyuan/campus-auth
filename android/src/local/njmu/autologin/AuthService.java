@@ -75,7 +75,7 @@ public class AuthService extends Service {
         PendingIntent pi = PendingIntent.getActivity(this, 0, new Intent(this, MainActivity.class), PendingIntent.FLAG_IMMUTABLE);
         startForeground(1, new Notification.Builder(this, "quiet")
             .setSmallIcon(android.R.drawable.stat_notify_sync_noanim)
-            .setContentTitle("校园网自动认证运行中")
+            .setContentTitle("我爱校园网运行中")
             .setContentText("后台静默检测，无需打开认证网页")
             .setContentIntent(pi)
             .setOngoing(true)

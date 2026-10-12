@@ -40,13 +40,13 @@ for token in ["timeSec%24.0","timeSec%18.0","radial(c,x1","radial(c,x2","radial(
     check(token in b,"Missing native reference drawing pass "+token)
 for token in [".78f+.18f", ".14f+.11f", ".15f+.16f", ".83f+.10f", ".30f+.07f", ".69f+.07f", "bandTeal=dark?.50f:.33f", "bandViolet=dark?.48f:.33f", "radius*.90f", "radius*.60f"]:
     check(token in b,"Motion geometry or alpha discrepancy "+token)
-for token in ['OneUiAppearance.campusAccount(this)','badge.setText("v1.8.5")','"必选"','"建议"','windowWidthDp < 600','windowWidthDp >= 840','new LinearLayout.LayoutParams(-1, dp(52))','scene.addView(dock, lp)','setBackground(makeSurface(cCard, 22))']:
+for token in ['OneUiAppearance.campusAccount(this)','badge.setText("v1.8.6")','"必选"','"建议"','windowWidthDp < 600','windowWidthDp >= 840','new LinearLayout.LayoutParams(-1, dp(52))','scene.addView(dock, lp)','setBackground(makeSurface(cCard, 22))']:
     check(token in u,"Responsive layout/required tag not wired "+token)
 for token in ['OneUiPalette.MODE_AMOLED.equals(mode(c))','"system_accent1"','"system_accent2_200"','"动态极光   ·   "','clearLegacyNamePreference','"system_neutral1_900"']:
     check(token in a+b,"Four modes/dynamic material roles/watermark menu missing "+token)
 for token in ['"跟随系统"','"浅色模式"','"深色模式"','"AMOLED 纯黑"','"#2189FF"','"#28A879"','"#8570E8"','"#EC789A"','"#E8A13B"','"#16A6B6"','"#687684"','"#DA626B"']:
     check(token in ps,"Reference preset or theme mode missing "+token)
 manifest=ET.parse(ROOT/"android/AndroidManifest.xml").getroot()
-check(manifest.attrib["{http://schemas.android.com/apk/res/android}versionName"]=="1.8.5","manifest version")
-check(manifest.attrib["{http://schemas.android.com/apk/res/android}versionCode"]=="17","manifest versionCode")
+check(manifest.attrib["{http://schemas.android.com/apk/res/android}versionName"]=="1.8.6","manifest version")
+check(manifest.attrib["{http://schemas.android.com/apk/res/android}versionCode"]=="18","manifest versionCode")
 print(f"PASS: {checks} read-only hash and UI reference contract checks; 12 source files unchanged")

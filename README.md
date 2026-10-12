@@ -1,18 +1,18 @@
-# 校园网自动认证 · Campus AutoAuth
+# 我爱校园网 · WoAi Campus
 
-**一次配置，连接校园网自动认证。**
+**一次配置，告别反复认证。**
 
 一款面向 Android 的轻量校园网登录辅助工具。连接支持的校园 Wi-Fi 时，尝试检测门户跳转并提交用户自行保存的认证凭据，减少反复打开网页、填写账号密码的步骤。
 
 ## 正式版下载
 
-**当前正式版：v1.8.5 · VersionCode 17 · Android 8.0+**
+**当前正式版：v1.8.6 · VersionCode 18 · Android 8.0+**
 
-- [下载最新正式版 APK](https://github.com/chessyuan/campus-auth/releases/latest/download/NJMU-AutoAuth-v1.8.5-OneUI.apk)
+- [下载最新正式版 APK](https://github.com/chessyuan/campus-auth/releases/latest/download/WoAiCampus-v1.8.6-OneUI.apk)
 - [查看 GitHub Releases](https://github.com/chessyuan/campus-auth/releases)
 - [访问项目网站](https://chessyuan.com/apps/campus-auth)
 
-APK SHA-256：`A4231FAEB662D57BF8FF41CEA0948231BEE7EBE57DAB2F97E919F819BC940AEF`
+APK SHA-256：`7974197F403BBF189F0C57259A48999E953E133233B9C87A6A02424113D9A58E`
 
 安装包大小：102,795 字节。发布页附 SHA256SUMS.txt，供安装前校验文件完整性。
 
@@ -28,7 +28,7 @@ APK SHA-256：`A4231FAEB662D57BF8FF41CEA0948231BEE7EBE57DAB2F97E919F819BC940AEF`
 
 ## 安装与使用
 
-1. 从 **Releases** 下载 v1.8.5 APK 并安装。已有相同签名的旧版，可尝试直接覆盖升级，不必卸载丢失设置。
+1. 从 **Releases** 下载 v1.8.6 APK 并安装。已有相同签名的旧版，可尝试直接覆盖升级，不必卸载丢失设置。
 2. 在应用里选择运营商，填写自己的校园网账号和密码，点击 **保存配置并启用**。
 3. 根据需要选择 **隐藏后台**；点击 **电池不受限制** 可以打开系统对应设置入口，减少后台调度受限制的概率。
 4. 连接支持的校园 Wi-Fi，在首页查看认证及最近运行记录。
