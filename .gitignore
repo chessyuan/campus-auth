@@ -1,0 +1,19 @@
+# Local build outputs and private signing material
+build/
+release/
+dist/
+android/keystore/
+*.jks
+*.keystore
+*signing-password*
+*.idsig
+.env
+.env.*
+local.properties
+*.iml
+.gradle/
+.idea/
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db
